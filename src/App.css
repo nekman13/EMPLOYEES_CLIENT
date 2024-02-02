@@ -55,12 +55,6 @@ nav {
     box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
 }
 
-.employees-card {
-    margin: 5% 5%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
-    gap: 1rem;
-}
 
 
 
@@ -76,5 +70,14 @@ nav {
     top: -1.5rem;
     right: 0.5rem;
     scale: 1;
+
+}
+
+
+.filterSearchButton {
+    position: absolute;
+    top: -1.3rem;
+    right: -2rem;
+    scale: 0.7;
 
 }

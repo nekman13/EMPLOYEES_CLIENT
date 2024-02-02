@@ -3,7 +3,7 @@ import React from "react";
 function Employee(props) {
 
     return (
-            <div className="col s6 m6">
+
                 <div className="card employees-card #b388ff deep-purple accent-1 darken-1">
                     <div className="card-content white-text">
                         <span className="card-title">{props.employee.last_name} {props.employee.first_name}</span>
@@ -23,7 +23,7 @@ function Employee(props) {
                         </button>
                     </div>
                 </div>
-            </div>
+
 
 
     )

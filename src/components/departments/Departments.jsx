@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
 import Department from "./Department";
-import Preloader from "./Preloader";
-import Search from "./Search";
+import Preloader from "../Preloader";
+import Search from "../Search";
+import MenuDepartments from "./menuDepartments";
 
 function Departments(props) {
 
@@ -33,20 +34,25 @@ function Departments(props) {
     }
 
     return (
-        <div className="departments">
+        <div className="departments row">
             <Search search={searchDepartments}/>
-            {isLoading ? <Preloader/> :
-                departments.length === 0 ?
-                    <div>
-                        <h5>Департаменты не найдены</h5>
-                        <button className="deleteButton" onClick={() => searchDepartments("")}>Сбросить</button>
-                    </div>    :
-            <ul>
-                {departments.map(dep => (
-                    <Department key={dep.key} department={dep} onDelete={deleteDepartment}/>
-                ))}
-            </ul>
-            }
+            <div className="col s3">
+                <MenuDepartments departmentSearch={searchDepartments}/>
+            </div>
+            <div className="col s7">
+                {isLoading ? <Preloader/> :
+                    departments.length === 0 ?
+                        <div>
+                            <h5>Департаменты не найдены</h5>
+                            <button className="deleteButton" onClick={() => searchDepartments("")}>Сбросить</button>
+                        </div> :
+                        <ul>
+                            {departments.map(dep => (
+                                <Department key={dep.key} department={dep} onDelete={deleteDepartment}/>
+                            ))}
+                        </ul>
+                }
+            </div>
         </div>
     )
 }

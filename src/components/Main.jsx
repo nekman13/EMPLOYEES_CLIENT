@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
-import Employees from "./Employees";
-import Departments from "./Departments";
+import Employees from "./employees/Employees";
+import Departments from "./departments/Departments";
 
 
 
